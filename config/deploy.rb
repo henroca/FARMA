@@ -102,16 +102,8 @@ namespace :deploy do
     end
   end
 
-  desc 'npm install'
-  task :npm do
-    on roles(:app) do
-      execute "npm install"
-    end
-  end
-
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
-  before :compile_assets, :npm
   after  :finishing,    :cleanup
 end
 
