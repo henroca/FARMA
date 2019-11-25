@@ -102,8 +102,16 @@ namespace :deploy do
     end
   end
 
+  desc 'Yarn install'
+  task :yarn do
+    on roles(:app) do
+      execute "yarn install"
+    end
+  end
+
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
+  before :compile_assets, :yarn
   after  :finishing,    :cleanup
 end
 
