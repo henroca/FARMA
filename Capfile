@@ -11,7 +11,6 @@ require 'capistrano/rails/migrations'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/db'
 require 'capistrano/nvm'
-require 'capistrano/yarn'
 require 'capistrano/rake'
 require 'sshkit/sudo'
 
