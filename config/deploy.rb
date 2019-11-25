@@ -102,8 +102,16 @@ namespace :deploy do
     end
   end
 
+  desc 'Skip asset compile'
+  task :skip_assets do
+    puts Airbrussh::Colors.yellow('** Skipping asset compile.')
+    Rake::Task['deploy:assets:precompile'].clear_actions
+  end
+
+  before :starting,     :skip_assets
   before :starting,     :check_revision
   after  :finishing,    :cleanup
+  Rake::Task['deploy:assets:precompile'].clear_actions
 end
 
 ############################################
