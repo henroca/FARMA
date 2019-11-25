@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
     !teams.find_by(id: team.id).nil?
   end
 
+  def send_confirmation_notification?
+    false
+  end
+
   def register(params)
     team = Team.find params[:id]
 
