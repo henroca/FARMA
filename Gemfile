@@ -49,6 +49,7 @@ group :development do
   gem 'capistrano-rails-db',require: false
   gem 'capistrano-nvm',     require: false
   gem 'capistrano-rake',    require: false
+  gem 'capistrano-yarn',    require: false
 end
 
 group :development, :test do
