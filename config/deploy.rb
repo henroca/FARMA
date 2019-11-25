@@ -3,7 +3,7 @@ lock '3.11.0'
 
 set :stages, ['production']
 
-set :application,     'FARMA'
+set :application,     'farma'
 set :branch,          'production'
 
 set :user,            'deployer'
