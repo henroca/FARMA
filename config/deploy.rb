@@ -103,7 +103,6 @@ namespace :deploy do
   end
 
   before :starting,     :check_revision
-  after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
 end
 
